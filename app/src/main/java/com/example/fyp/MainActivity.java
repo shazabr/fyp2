@@ -23,21 +23,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        username = (EditText)findViewById(R.id.eusername);
-        password = (EditText)findViewById(R.id.epassword);
+        username = (EditText) findViewById(R.id.eusername);
+        password = (EditText) findViewById(R.id.epassword);
 
         test = (TextView) findViewById(R.id.etest);
         login = (Button) findViewById(R.id.elogin);
 
 
-    }
+        login.setOnClickListener(new View.OnClickListener() {
 
-    login.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                validate(username.getText().toString(), password.getText().toString());
 
-                public void onClick(View view) {
-            validate(username.getText().toString(), password.getText().toString());
+            }
 
-        }
+        });
 
     }
 
