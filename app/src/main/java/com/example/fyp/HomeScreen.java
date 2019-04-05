@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class HomeScreen extends AppCompatActivity {
 
     private Button logout;
+    private Button scan;
     private FirebaseAuth firebaseAuth;
 
     @Override
@@ -26,6 +27,14 @@ public class HomeScreen extends AppCompatActivity {
                 firebaseAuth.signOut();
                 finish();
                 startActivity(new Intent(HomeScreen.this, MainActivity.class));
+            }
+        });
+
+        scan = (Button)findViewById(R.id.escan);
+        scan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeScreen.this, OCR.class));
             }
         });
     }
